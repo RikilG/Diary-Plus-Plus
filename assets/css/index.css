@@ -1,0 +1,15 @@
+.title {
+    display: block;
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.editor {
+    margin: 1em;
+}
+
+#root {
+    display: flexbox;
+}

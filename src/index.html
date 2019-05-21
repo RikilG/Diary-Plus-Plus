@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../assets/css/index.css" />
+        <title>Diary++</title>
+    </head>
+    <body>
+        <header>
+            <div class="title">Diary++</div>
+        </header>
+        <div id="root">
+            <div>
+                <label for="tfDiaryName" >Diary Name to Load :</label>
+                <input id="tfDiaryName" type="text" placeholder="name" />
+                <input id="btnSelectDiary" type="button" value="Load Diary"/>
+            </div>
+        </div>
+        <!-- <footer>
+            We are using node
+            <script>
+                document.write(process.versions.node);
+            </script>
+            , Chrome
+            <script>
+                document.write(process.versions.chrome);
+            </script>
+            , and Electron
+            <script>
+                document.write(process.versions.electron);
+            </script>.
+        </footer> -->
+        <script src="./index.js" ></script>
+    </body>
 </html>
