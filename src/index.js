@@ -43,7 +43,6 @@ checkDir = (callback) => {
 }
 
 loadAllDiaries = (callback) => {
-    let diaries;
     fs.readdirSync(directory).forEach(file => {
         let path = directory + seperator + file;
         if(fs.lstatSync(path).isDirectory()) {

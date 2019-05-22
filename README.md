@@ -10,10 +10,10 @@ npm start
 ```
 
 ## Features: (checked are completed)
- - [ ] Maintain multiple diaries
+ - [x] Maintain multiple diaries
  - [ ] Have Encrypted Diaries
  - [ ] Sync diaries with cloud like drive or dropbox
- - [ ] List and search diaries
+ - [ ] List and search diary entries
  - [ ] Import entries from text file
  - [ ] Export to md, html, pdf, etc...
  - [ ] Preferences(diary save location and other settings)

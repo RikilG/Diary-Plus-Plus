@@ -11,7 +11,7 @@ document.getElementById('btnCreateDiary').addEventListener('click', () => {
     }
     fs.mkdirSync(path);
     document.getElementById('error').innerHTML = "Diary created successfully...\nRedirecting...";
-    setTimeout(() => window.location.href = "./index.html", 1000);
+    setTimeout(() => window.location.href = "./index.html", 600);
 });
 
 document.getElementById('btnBack').addEventListener('click', () => {
