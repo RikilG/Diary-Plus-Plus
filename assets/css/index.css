@@ -6,10 +6,28 @@
     font-size: 2em;
 }
 
-.editor {
-    margin: 1em;
+#formSelDiary {
+    margin: 2em;
+    padding: 2em;
+    width: 50%;
+    min-height: 8em;
+    max-height: 50%;
+    background-color: rgb(148, 148, 148);
 }
 
-#root {
-    display: flexbox;
+#root,
+#formSelDiary {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+body {
+    background-color: rgb(51, 51, 51);
+}
+
+#error {
+    color: red;
 }
