@@ -7,13 +7,17 @@
     </head>
     <body>
         <header>
-            <div class="title">Diary++</div>
+            <div class="title">Welcome to Diary++</div>
         </header>
         <div id="root">
-            <div>
+            <div id="formSelDiary">
                 <label for="tfDiaryName" >Diary Name to Load :</label>
-                <input id="tfDiaryName" type="text" placeholder="name" />
-                <input id="btnSelectDiary" type="button" value="Load Diary"/>
+                <select id="tfDiaryName" name="selDiary" >
+                    <option value="null"></option>
+                </select>
+                <input id="btnLoadDiary" type="button" value="Load Diary"/>
+                <input id="btnCreateDiary" type="button" value="Create Diary"/>
+                <p id="error"></p>
             </div>
         </div>
         <!-- <footer>
