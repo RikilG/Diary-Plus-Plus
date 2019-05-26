@@ -11,12 +11,14 @@ npm start
 
 ## Features: (checked are completed)
  - [x] Maintain multiple diaries
- - [ ] Have Encrypted Diaries
+ - [x] Have Encrypted Diaries
+ - [ ] Import entries from text file
+ - [ ] Option to encrypt whole diary and decrypt whole diary.
  - [ ] Sync diaries with cloud like drive or dropbox
  - [ ] List and search diary entries
- - [ ] Import entries from text file
  - [ ] Export to md, html, pdf, etc...
  - [ ] Preferences(diary save location and other settings)
+ - [ ] Page to edit preferences
 
 ## Optional: (might implement after major work is done)
  - [ ] Refine editor as a code editor
