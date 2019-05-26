@@ -7,6 +7,7 @@ let filePath = diaryStoreLocation + seperator + diaryName + seperator + date.toD
 
 let infoPanel = document.getElementById('info');
 let editor = document.getElementById('editor');
+let editorTitle = document.getElementById('editorTitle');
 let btnBack = document.getElementById('btnBack');
 let btnSave = document.getElementById('btnSave');
 let btnEdit = document.getElementById('btnEdit');
@@ -23,6 +24,7 @@ encrypt = (text) => {
  return {
      info: "Do not modify this file.",
      isEncrypted: true,
+     title: editorTitle.value,
      key: key.toString('hex'),
      iv: iv.toString('hex'),
      encryptedData: encrypted.toString('hex')
@@ -32,6 +34,7 @@ encrypt = (text) => {
 nonEncrypt = (text) => {
     return {
         isEncrypted: false,
+        title: editorTitle.value,
         data: text
     }
 }
@@ -69,20 +72,24 @@ btnSave.addEventListener('click', () => {
 
 btnEdit.addEventListener('click', () => {
     editor.readOnly = false;
+    editorTitle.readOnly = false;
     btnSave.style.display = "block";
     btnEdit.style.display = "none";
-    infoPanel.style.display = "none";
+    infoPanel.innerHTML = "Edit Mode";
 });
 
 if(window.localStorage.getItem('readonly') === 'true') {
     filePath = window.localStorage.getItem('entryPath');
     fs.readFile(window.localStorage.getItem('entryPath'), {encoding: 'utf-8'}, (err, data) => {
+        if(err) console.log(err);
         let fileData = JSON.parse(data);
         if (fileData.isEncrypted === true)
             editor.value = decrypt(fileData);
         else
             editor.value = fileData.data;
+        editorTitle.value = fileData.title;
         editor.readOnly = true;
+        editorTitle.readOnly = true;
         infoPanel.innerHTML = "Read-Only Mode"
         btnEdit.style.display = "block";
         btnSave.style.display = "none";

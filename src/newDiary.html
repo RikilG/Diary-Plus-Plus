@@ -2,21 +2,23 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <!-- <link rel="stylesheet" href="../assets/css/index.css" /> -->
+        <link rel="stylesheet" href="../assets/css/newDiary.css" />
+        <link rel="stylesheet" href="../assets/css/elements.css" />
         <title>Diary++</title>
     </head>
     <body>
-        <header>
-            <div class="title">Welcome to Diary++</div>
-        </header>
         <div id="root">
+            <input id="btnBack" class="button" type="button" value=""/>
+            <h1 class="title">Welcome to Diary++</h1>
+            <hr class="seperator" />
+            <center>
             <div id="formSelDiary">
-                <input id="btnBack" type="button" value="Go Back"/>
-                <label for="tfDiaryName" >Enter new diary name :</label>
+                <label id="lblDiaryName" for="tfDiaryName" >Enter new diary name :</label>
                 <input type="text" id="tfDiaryName" placeholder="Diary Name" />
-                <input id="btnCreateDiary" type="button" value="Create Diary"/>
+                <input id="btnCreateDiary" class="button" type="button" value="Create Diary"/>
                 <p id="error"></p>
             </div>
+            </center>
         </div>
         <script src="./newDiary.js" ></script>
     </body>

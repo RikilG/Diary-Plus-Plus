@@ -3,16 +3,20 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="../assets/css/newNote.css" />
+        <link rel="stylesheet" href="../assets/css/elements.css" />
         <title>Diary++</title>
     </head>
     <body>
         <div id="root">
-            <div>
-                <button id="btnBack" >Back</buton>
-                <button id="btnSave" >Save</button><br />
-                <button id="btnEdit" >Edit</button><br />
+            <input id="btnBack" class="button" type="button" value="" />
+            <h1 class="title">Diary entry editor</h1>
+            <input type="button" class="button" id="btnSave" value="Save" />
+            <input type="button" class="button" id="btnEdit" value="Edit" />
+            <hr class="seperator" />
+            <div id="editorContainer">
                 <p id="info">Edit Mode</p>
-                <textarea id="editor"></textarea>
+                <input class="editorTitle" id="editorTitle" type="text" placeholder=" (optional) Title" />
+                <textarea class="editor" id="editor" placeholder="Diary entry starts here..."></textarea>
             </div>
         </div>
     </body>

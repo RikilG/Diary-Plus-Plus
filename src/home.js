@@ -10,6 +10,12 @@ document.getElementById('btnBack').addEventListener('click', () => {
 });
 
 document.getElementById('btnNewEntry').addEventListener('click', () => {
+    let fileName = new Date();
+    fileName = fileName.toDateString().replace(/ /g, "-");
+    if(fs.existsSync(diaryPath + seperator + fileName)) {
+        window.localStorage.setItem('readonly', 'true');
+        window.localStorage.setItem('entryPath', diaryPath + seperator + fileName);
+    }
     window.location.href = "./newNote.html";
 });
 
@@ -21,6 +27,7 @@ fs.readdirSync(diaryPath).forEach(file => {
         let entry = document.createElement('div');
         entry.innerHTML = file;
         entry.style.cursor = "pointer";
+        entry.className = "diaryEntry"
         entry.addEventListener('click', (event) => {
             window.localStorage.setItem('readonly', 'true');
             window.localStorage.setItem('entryPath', diaryPath + seperator + event.target.innerHTML);

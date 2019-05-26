@@ -1,9 +1,9 @@
-.title {
+#diaryTitle {
     display: block;
-    color: red;
     text-align: center;
     font-weight: bold;
     font-size: 2em;
+    padding-bottom: 0;
 }
 
 #formSelDiary {
@@ -12,7 +12,6 @@
     width: 50%;
     min-height: 8em;
     max-height: 50%;
-    background-color: rgb(148, 148, 148);
 }
 
 #root,
@@ -24,10 +23,34 @@
     align-content: center;
 }
 
-body {
-    background-color: rgb(51, 51, 51);
-}
-
 #error {
     color: red;
+}
+
+#tfDiaryName {
+    min-width: 50%;
+    margin: 1.5em;
+    padding: 0.2em;
+    border: 0.1em solid red;
+    border-radius: 0.7em;
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+
+#lblDiaryName {
+    transform: translate(0em, 1em);
+    font-weight: bold;
+}
+
+#btnLoadDiary,
+#btnCreateDiary {
+    margin: 0.3em;
+    padding: 0.4em;
+}
+
+#btnLoadDiary:hover,
+#btnCreateDiary:hover {
+    transform: scale(1.05);
+    background-color: green;
+    color: rgb(171, 250, 204);
 }

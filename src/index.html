@@ -3,20 +3,24 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="../assets/css/index.css" />
+        <link rel="stylesheet" href="../assets/css/elements.css" />
         <title>Diary++</title>
     </head>
     <body>
         <header>
-            <div class="title">Welcome to Diary++</div>
+            <div class="title" id="diaryTitle">Welcome to Diary++</div>
         </header>
+        <hr class="seperator" />
         <div id="root">
-            <div id="formSelDiary">
-                <label for="tfDiaryName" >Diary Name to Load :</label>
+            <div id="formSelDiary" class="panel">
+                <label id="lblDiaryName" for="tfDiaryName" >Diary Name to Load :</label>
                 <select id="tfDiaryName" name="selDiary" >
                     <option value="null"></option>
                 </select>
-                <input id="btnLoadDiary" type="button" value="Load Diary"/>
-                <input id="btnCreateDiary" type="button" value="Create Diary"/>
+                <div>
+                    <input id="btnCreateDiary" class="button" type="button" value="Create Diary"/>
+                    <input id="btnLoadDiary" class="button" type="button" value="Load Diary"/>
+                </div>
                 <p id="error"></p>
             </div>
         </div>

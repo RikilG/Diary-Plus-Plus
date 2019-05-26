@@ -1,3 +1,46 @@
+#info {
+    padding: 0.1em;
+    padding-left: 0.5em;
+    margin-top: 0;
+    border-radius: 0.2em;
+    background-color: rgb(171, 250, 204, 0.4);
+}
+
+#btnBack,
+#btnSave,
+#btnEdit {
+    margin: 0.2em;
+    margin-bottom: 0;
+    padding: 0.8em;
+}
+
+#btnBack:hover,
+#btnSave:hover,
+#btnEdit:hover {
+    transform: scale(1.1);
+    background-color: green;
+    color: rgb(171, 250, 204);
+}
+
 #btnEdit {
     display: none;
+    float: right;
+}
+
+#btnSave {
+    float: right;
+}
+
+#btnBack {
+    float: left;
+    background-image: url("../images/left-arrow-key.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#editorContainer {
+    display: flex;
+    flex-flow: column;
+    flex-direction: column;
+    align-content: center;
 }
