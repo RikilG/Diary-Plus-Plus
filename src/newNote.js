@@ -1,5 +1,6 @@
 let fs = require('fs');
 let prefs = require('./Prefs.json');
+let dialog = require('electron').remote.dialog;
 let diaryName = window.localStorage.getItem('diaryName');
 let { diaryStoreLocation, seperator } = require('./Globals');
 let date = new Date();
@@ -11,6 +12,7 @@ let editorTitle = document.getElementById('editorTitle');
 let btnBack = document.getElementById('btnBack');
 let btnSave = document.getElementById('btnSave');
 let btnEdit = document.getElementById('btnEdit');
+let btnLoadFile = document.getElementById('btnLoadFile');
 
 const crypto = require('crypto');
 const algorithm = 'aes-256-cbc';
@@ -63,10 +65,11 @@ btnSave.addEventListener('click', () => {
     else 
         data = JSON.stringify(nonEncrypt(editor.value));
     fs.writeFile(filePath, data, (err) => {
-        (err)?console.log('Error in saving file\n'+err):null
+        if (err) console.log('Error in saving file\n'+err);
+        infoPanel.innerHTML = "Saved Successfully!";
         setTimeout(() => {
             window.location.href = "./home.html";
-        }, 500);
+        }, 800);
     });
 });
 
@@ -74,8 +77,20 @@ btnEdit.addEventListener('click', () => {
     editor.readOnly = false;
     editorTitle.readOnly = false;
     btnSave.style.display = "block";
+    btnLoadFile.style.display = "block";
     btnEdit.style.display = "none";
     infoPanel.innerHTML = "Edit Mode";
+});
+
+btnLoadFile.addEventListener('click', () => {
+    dialog.showOpenDialog({ filters: [{ name: 'text', extensions: ['txt'] } ]}, (file) => {
+        if(file === undefined) return;
+        let fileName = file[0];
+        fs.readFile(fileName, { encoding: 'utf-8' }, (err, data) => {
+            if(err) console.log(err);
+            editor.value += "\n\n" + data;
+        })
+    });
 });
 
 if(window.localStorage.getItem('readonly') === 'true') {

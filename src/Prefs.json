@@ -1,3 +1,5 @@
 {
-    "encryption": true
+    "encryption": true,
+    "themeMode": "darkDiary",
+    "diaryStoreLocation": "default"
 }

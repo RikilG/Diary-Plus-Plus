@@ -8,7 +8,8 @@
 
 #btnBack,
 #btnSave,
-#btnEdit {
+#btnEdit,
+#btnLoadFile {
     margin: 0.2em;
     margin-bottom: 0;
     padding: 0.8em;
@@ -16,13 +17,15 @@
 
 #btnBack:hover,
 #btnSave:hover,
-#btnEdit:hover {
-    transform: scale(1.1);
+#btnEdit:hover,
+#btnLoadFile:hover {
+    transform: scale(1.08);
     background-color: green;
     color: rgb(171, 250, 204);
 }
 
-#btnEdit {
+#btnEdit,
+#btnLoadFile {
     display: none;
     float: right;
 }
