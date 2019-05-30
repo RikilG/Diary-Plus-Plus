@@ -9,7 +9,8 @@
 #btnBack,
 #btnSave,
 #btnEdit,
-#btnLoadFile {
+#btnLoadFile,
+#btnDelete {
     margin: 0.2em;
     margin-bottom: 0;
     padding: 0.8em;
@@ -18,14 +19,16 @@
 #btnBack:hover,
 #btnSave:hover,
 #btnEdit:hover,
-#btnLoadFile:hover {
+#btnLoadFile:hover,
+#btnDelete:hover {
     transform: scale(1.08);
     background-color: green;
     color: rgb(171, 250, 204);
 }
 
 #btnEdit,
-#btnLoadFile {
+#btnLoadFile,
+#btnDelete {
     display: none;
     float: right;
 }

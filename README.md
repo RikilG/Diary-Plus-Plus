@@ -11,7 +11,7 @@ npm start
 
 ## Features: (checked are completed)
  - [x] Maintain multiple diaries
- - [x] Have Encrypted Diary entries
+ - [x] Have Encrypted Diary entries(just to prevent direct read/write access to files)
  - [x] Import entries from text file
  - [ ] Have password protected diary
  - [ ] Option to encrypt whole diary and decrypt whole diary.

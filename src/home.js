@@ -9,12 +9,15 @@ document.getElementById('btnBack').addEventListener('click', () => {
     window.location.href = "./index.html";
 });
 
-document.getElementById('btnNewEntry').addEventListener('click', () => {
-    let fileName = new Date();
+document.getElementById('btnNewEntry').addEventListener('click', async () => {
+    let fileName = await new Date();
     fileName = fileName.toDateString().replace(/ /g, "-");
     if(fs.existsSync(diaryPath + seperator + fileName)) {
         window.localStorage.setItem('readonly', 'true');
         window.localStorage.setItem('entryPath', diaryPath + seperator + fileName);
+    }
+    else {
+        window.localStorage.setItem('readonly', 'false');
     }
     window.location.href = "./newNote.html";
 });

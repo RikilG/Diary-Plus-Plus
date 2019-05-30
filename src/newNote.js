@@ -12,10 +12,10 @@ let editorTitle = document.getElementById('editorTitle');
 let btnBack = document.getElementById('btnBack');
 let btnSave = document.getElementById('btnSave');
 let btnEdit = document.getElementById('btnEdit');
+let btnDelete = document.getElementById('btnDelete');
 let btnLoadFile = document.getElementById('btnLoadFile');
 
 const crypto = require('crypto');
-const algorithm = 'aes-256-cbc';
 const key = crypto.randomBytes(32);
 const iv = crypto.randomBytes(16);
 
@@ -82,6 +82,38 @@ btnEdit.addEventListener('click', () => {
     infoPanel.innerHTML = "Edit Mode";
 });
 
+btnDelete.addEventListener('click', () => {
+    let deletePrompt = document.createElement('div');
+    let btnYes = document.createElement('input');
+    let btnNo = document.createElement('input');
+    btnYes.className = "button";
+    btnNo.className = "button";
+    btnYes.type = "button";
+    btnNo.type = "button";
+    btnYes.value = "Yes";
+    btnNo.value = "No";
+    deletePrompt.innerHTML = "Do you want to delete this entry? : ";
+    deletePrompt.appendChild(btnYes);
+    deletePrompt.appendChild(btnNo);
+    btnYes.addEventListener('click', () => {
+        fs.unlink(filePath, (err) => {
+            console.log(err);
+            infoPanel.innerHTML = "File deleted successfully";
+            setTimeout(() => {
+                window.location.href = "./home.html";
+            }, 800);
+        });
+    });
+    btnNo.addEventListener('click', () => {
+        if(editor.readOnly === true)
+            infoPanel.innerHTML = "Read-Only Mode";
+        else 
+            infoPanel.innerHTML = "Edit Mode";
+    })
+    infoPanel.innerHTML = "";
+    infoPanel.appendChild(deletePrompt);
+});
+
 btnLoadFile.addEventListener('click', () => {
     dialog.showOpenDialog({ filters: [{ name: 'text', extensions: ['txt'] } ]}, (file) => {
         if(file === undefined) return;
@@ -107,6 +139,7 @@ if(window.localStorage.getItem('readonly') === 'true') {
         editorTitle.readOnly = true;
         infoPanel.innerHTML = "Read-Only Mode"
         btnEdit.style.display = "block";
+        btnDelete.style.display = "block";
         btnSave.style.display = "none";
     })
 }
