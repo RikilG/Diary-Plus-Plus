@@ -1,56 +1,81 @@
-#diaryTitle {
-    display: block;
+#root1 {
+    display: flex;
+    height: 97vh;
+    min-height: 80vh;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 0.1em;
+    min-width: 9.5em;
+    width: 25%;
+    max-width: 15em;
+    background-color: rgb(182, 243, 92);
+    border-radius: 0.5em;
+}
+
+#mainbar {
+    padding: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.button2 {
+    display: inline;
+    margin: 1em;
+    padding: 0.5em;
+    cursor: pointer;
+    background-color: lime;
+    text-align: center;
+    border-radius: 0.25em;
+}
+
+.button2:hover {
+    background-color: rgb(62, 255, 62);
+}
+
+.diary {
+    margin: 0.5em;
+    padding: 0.3em;
+    text-align: center;
+    background-color: rgb(42, 190, 166);
+    cursor: pointer;
+    border-radius: 0.25em;
+}
+
+.diary:hover {
+    background-color: rgb(95, 204, 186);
+}
+
+.diaryTitle {
     text-align: center;
     font-weight: bold;
-    font-size: 2em;
-    padding-bottom: 0;
+    font-size: 3em;
 }
 
-#formSelDiary {
-    margin: 2em;
-    padding: 2em;
-    width: 50%;
-    min-height: 8em;
-    max-height: 50%;
-}
-
-#root,
-#formSelDiary {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-}
-
-#error {
-    color: red;
-}
-
-#tfDiaryName {
-    min-width: 50%;
-    margin: 1.5em;
-    padding: 0.2em;
-    border: 0.1em solid red;
-    border-radius: 0.7em;
-    background-color: yellowgreen;
+.diaryEntry {
+    margin: 0.7em;
+    padding: 0.3em;
+    background-color: rgb(142, 81, 255);
+    text-align: center;
     cursor: pointer;
+    border-radius: 0.25em;
 }
 
-#lblDiaryName {
-    transform: translate(0em, 1em);
+.diaryEntry:hover {
+    background-color: rgb(164, 115, 255);
+}
+
+#sidebarTitle {
+    margin: 0.15em;
+    text-align: left;
     font-weight: bold;
+    font-size: 2.5em;
 }
 
-#btnLoadDiary,
 #btnCreateDiary {
-    margin: 0.3em;
-    padding: 0.4em;
-}
-
-#btnLoadDiary:hover,
-#btnCreateDiary:hover {
-    transform: scale(1.05);
-    background-color: green;
-    color: rgb(171, 250, 204);
+    /* margin-bottom: auto; */
+    margin-top: auto;
 }

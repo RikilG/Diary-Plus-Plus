@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(51, 51, 51);
+    /* background-color: rgb(51, 51, 51); */
+    background-color: rgb(187, 187, 187);
 }
 
 .seperator {
@@ -10,8 +11,8 @@ body {
 
 .title {
     display: inline;
-    padding: 0.25em;
-    color: rgb(65, 140, 252);
+    padding: 0.22em;
+    color: rgb(0, 17, 255);
 }
 
 .panel {
@@ -20,12 +21,9 @@ body {
 
 .button {
     background-color: greenyellow;
-    border: 0.1em solid black;
     border-radius: 0.7em;
-    transition: 0.5s all;
     font-weight: bold;
     cursor: pointer;
-    font-weight: bold;
 }
 
 .editor {

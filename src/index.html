@@ -7,21 +7,18 @@
         <title>Diary++</title>
     </head>
     <body>
-        <header>
-            <div class="title" id="diaryTitle">Welcome to Diary++</div>
-        </header>
-        <hr class="seperator" />
-        <div id="root">
-            <div id="formSelDiary" class="panel">
-                <label id="lblDiaryName" for="tfDiaryName" >Diary Name to Load :</label>
-                <select id="tfDiaryName" name="selDiary" >
-                    <option value="null"></option>
-                </select>
-                <div>
-                    <input id="btnCreateDiary" class="button" type="button" value="Create Diary"/>
-                    <input id="btnLoadDiary" class="button" type="button" value="Load Diary"/>
+        <div id="root1">
+            <div id="sidebar">
+                <p id="sidebarTitle" class="title">Your Diaries</p>
+                <div id="diaries">
                 </div>
-                <p id="error"></p>
+                <div id="btnCreateDiary" class="button2">Add new diary</div>
+            </div>
+            <div id="mainbar">
+                <div style="text-align: center; font-size: 5em;" class="title">Diary++</div>
+                <div style="text-align: center; font-weight: bold; font-size: 1.5em; padding-top: 25vh;">
+                    Hello World! :)<br /> Get Ready to write your diary for today!!
+                </div>
             </div>
         </div>
         <!-- <footer>

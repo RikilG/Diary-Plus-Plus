@@ -51,7 +51,7 @@ decrypt = (text) => {
 }
 
 btnBack.addEventListener('click', () => {
-    window.location.href = "./home.html";
+    window.location.href = "./index.html";
     window.localStorage.removeItem('readonly');
     window.localStorage.removeItem('entryPath');
 });
