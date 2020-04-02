@@ -1,4 +1,8 @@
 # Diary++
+This project will be depricated after the development of Propel
+ - [Github](https://github.com/RikilG/ProPl/)
+ - [Gitlab](https://gitlab.com/RikilG/propel)
+
 This is a desktop application build with electron framework to manage your diary entries. This is still in early development stage and has a long way to go...!
 
 ## To Run
